@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base colors */
+  --background: #F8F9F5;
+  --foreground: #212529;
+  
+  /* Brand colors */
+  --color-dark-green: #2A5D45;
+  --color-green: #3B7A5A;
+  --color-light-green: #5A9E7A;
+  
+  --color-brown: #8B6D4B;
+  --color-sand: #D9C0A3;
+  --color-clay: #BF8F65;
+  
+  --color-white: #FFFFFF;
+  --color-off-white: #F8F9F5;
+  --color-light-gray: #E9ECEF;
+  --color-gray: #6C757D;
+  --color-dark-gray: #343A40;
+  --color-black: #212529;
+  
+  --color-coral: #E86A58;
+  --color-aqua: #4ECDC4;
+  --color-yellow: #F7CB45;
 }
 
 @theme inline {
@@ -14,13 +35,74 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #212529;
+    --foreground: #F8F9F5;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Button styles */
+.btn {
+  @apply rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center;
+}
+
+.btn-primary {
+  @apply bg-[var(--color-dark-green)] text-white hover:bg-[var(--color-green)] shadow-lg hover:shadow-xl px-6 py-3;
+}
+
+.btn-outline {
+  @apply border-2 border-[var(--color-dark-green)] text-[var(--color-dark-green)] hover:bg-[var(--color-dark-green)] hover:text-white px-6 py-3;
+}
+
+/* 3D Box styles */
+.box-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.rotate-3d {
+  transition: transform 0.5s ease;
+}
+
+.rotate-3d:hover {
+  transform: rotate3d(1, 1, 0, 15deg);
 }
