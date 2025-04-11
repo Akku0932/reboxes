@@ -8,11 +8,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#3B82F6', // Blue color
+        primary: '#3B82F6',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        'dark-green': 'var(--color-dark-green)',
+        green: 'var(--color-green)',
+        'light-green': 'var(--color-light-green)',
+        brown: 'var(--color-brown)',
+        sand: 'var(--color-sand)',
+        clay: 'var(--color-clay)',
+        white: 'var(--color-white)',
+        'off-white': 'var(--color-off-white)',
+        'light-gray': 'var(--color-light-gray)',
+        gray: 'var(--color-gray)',
+        'dark-gray': 'var(--color-dark-gray)',
+        black: 'var(--color-black)',
+        coral: 'var(--color-coral)',
+        aqua: 'var(--color-aqua)',
+        yellow: 'var(--color-yellow)',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['var(--font-sans)', 'Arial', 'Helvetica', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
       },
     },
   },
